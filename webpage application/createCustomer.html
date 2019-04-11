@@ -1,0 +1,106 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Create Customer Profile</title>
+         <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+         <ul>
+            <li><a href="homepage.html">HOME</a></li>
+            <li class="dropdown">
+                <a href="staff.html" class="dropbtn">STAFF</a>
+                    <div class="dropdown-content">
+                      <a href="#">Create Staff Profile</a>
+                      <a href="#">Edit Staff Profile</a>
+                      <a href="#">Delete Staff Profile</a>
+                    </div>
+            </li>
+            <li class="dropdown">
+                <a href="customer.html" class="dropbtn">CUSTOMER</a>
+                <div class="dropdown-content">
+                      <a href="#">Create Customer Profile</a>
+                      <a href="#">Edit Customer Profile</a>
+                      <a href="#">Delete Customer Profile</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="inventory.html" class="dropbtn">INVENTORY</a>
+                <div class="dropdown-content">
+                      <a href="#">Create Customer Profile</a>
+                      <a href="#">Edit Customer Profile</a>
+                      <a href="#">Delete Customer Profile</a>
+                </div>
+            </li>
+            
+            <li class="dropdown">
+                <a href="report.html" class="dropbtn">REPORT</a>
+                <div class="dropdown-content">
+                    <a href="#">Sales Performance</a>
+                    <a href="#">Staff Sales Performance</a>
+                </div>
+            </li>
+        </ul>
+        
+        
+        <form id="staff_form">
+            <fieldset id="staff_box">
+                <legend id="staff_title">Customer Profile</legend>
+                <label for="staff_name">Name</label>
+                <span class="tabspace_name">
+                    :&nbsp;&nbsp;<input class="staff_name" type="text" name="name" size="40" required>
+                </span>
+                
+
+                <p>
+                    <label for="age">Age</label>
+                    <span class="tabspace_age">
+                        :&nbsp;&nbsp;<input id="age" type="text" name="age" size="40"required>
+                    </span>
+                    
+
+                    <label class="tabspace_gender"for="gender">Gender: </label>
+                        <select name="gender">
+                            <option></option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                </p>
+
+                <p>
+                    <label for="email">Email</label>
+                    <span class="tabspace_email">
+                        :&nbsp;&nbsp;<input id="email" type="email" name="email" size="40" required>
+                    </span>
+                </p>
+
+                <p>
+                    <label for="commments">Comments</label>
+                    <span class="tabspace_comment">
+                        :&nbsp;&nbsp;<textarea class="comments" type="text" rows="5" cols="50"></textarea>
+                    </span>
+                    
+                </p>
+            </fieldset>
+            
+             <div id="staff_button" onclick="addRow();">
+                 <input class="button" type="submit" align="center">
+                 <button class="button">Cancel</button>
+            </div>
+        </form>
+        
+       <script src="CreateStaff.js"></script>
+        
+    </body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
