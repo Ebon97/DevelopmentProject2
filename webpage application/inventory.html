@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Homepage</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    
-    <body>
-        <ul>
-            <li><a href="homepage.html">HOME</a></li>
-            <li class="dropdown">
-                <a href="staff.html" class="dropbtn">STAFF</a>
-                    <div class="dropdown-content">
-                      <a href="createStaff.html">Create Staff Profile</a>
-                      <a href="#">Edit Staff Profile</a>
-                      <a href="#">Delete Staff Profile</a>
-                    </div>
-            </li>
-            <li class="dropdown">
-                <a href="customer.html" class="dropbtn">CUSTOMER</a>
-                <div class="dropdown-content">
-                      <a href="createCustomer.html">Create Customer Profile</a>
-                      <a href="#">Edit Customer Profile</a>
-                      <a href="#">Delete Customer Profile</a>
+
+<head>
+    <title>Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="homepage.html">HOME</a></li>
+        <li class="dropdown">
+            <a href="staff.html" class="dropbtn">STAFF</a>
+            <div class="dropdown-content">
+                <a href="createStaff.html">Create Staff Profile</a>
+                <a href="#">Edit Staff Profile</a>
+                <a href="#">Delete Staff Profile</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="customer.html" class="dropbtn">CUSTOMER</a>
+            <div class="dropdown-content">
+                <a href="createCustomer.html">Create Customer Profile</a>
+                <a href="#">Edit Customer Profile</a>
+                <a href="#">Delete Customer Profile</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="inventory.html" class="dropbtn">INVENTORY</a>
+            <div class="dropdown-content">
+                <a href="#">Add Inventory</a>
+                <a href="#">Edit Inventory</a>
+                <a href="#">Delete Inventory</a>
+            </div>
+        </li>
+
+        <li class="dropdown">
+            <a href="report.html" class="dropbtn">REPORT</a>
+            <div class="dropdown-content">
+                <a href="#">Sales Performances</a>
+                <a href="#">Staff Performances</a>
+            </div>
+        </li>
+    </ul>
+                <div class="table1">
+                <form>
+                    <fieldset>
+                        <legend id="inventory_title">Inventory</legend>
+                        <div class="fill">
+                            <div>
+                                Inventory ID :<input type="number" name="invid" id="invid" size="20" required >
+                            </div>
+                        
+                            <div>
+                                Inventory Name :<input type="text" name="invname" id="invname" required>
+                            </div>
+               
+                            <div>
+                                Quantity :<input type="number" name="quantity" id="quantity" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <div id="inv_submitBtn">
+                    <button class="button" onclick="addHtmlTableRow();">Add</button>
+                    <button class="button" onclick="editHtmlTbleSelectedRow();">Edit</button>
+                    <button class="button" onclick="removeSelectedRow();">Remove</button>
                 </div>
-            </li>
-            <li class="dropdown">
-                <a href="inventory.html" class="dropbtn">INVENTORY</a>
-                <div class="dropdown-content">
-                      <a href="#">Create Customer Profile</a>
-                      <a href="#">Edit Customer Profile</a>
-                      <a href="#">Delete Customer Profile</a>
-                </div>
-            </li>
-            
-            <li class="dropdown">
-                <a href="report.html" class="dropbtn">REPORT</a>
-                <div class="dropdown-content">
-                    <a href="#">Sales Performance</a>
-                    <a href="#">Staff Sales Performance</a>
-                </div>
-            </li>
-        </ul>
-    </body>
+                    
+            </div>
+</body>
+
 </html>
