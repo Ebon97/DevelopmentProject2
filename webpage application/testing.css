@@ -1,0 +1,111 @@
+
+.navbar
+{
+    margin-bottom: 0px;
+}
+
+
+.size
+{
+    width:100%;
+}
+
+.bg
+{
+    background: url('image/salon.jpg') no-repeat;
+    padding-bottom: 211px;
+}
+
+.form-container
+{
+    border-radius: 50px;
+    padding-top:20px;
+    padding-bottom: 50px;
+    padding-left:50px;
+    padding-right:50px;
+    margin-top:40%;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+
+}
+
+
+.index-form
+{
+    padding-top:30px;
+}
+
+
+
+form
+{
+    padding-bottom: 5%;
+}
+
+#first
+{
+    padding-bottom: 2%;
+}
+
+#first input
+{
+    width:477px;
+}
+
+#second input
+{
+    width:318px;
+}
+
+#third input
+{
+    width:237px;
+}
+
+#fourth input
+{
+    width:237px;
+    
+}
+
+#invent_first select
+{
+    width:317px;
+}
+
+#invent_first input
+{
+    width:317px;
+}
+
+#invent_second input
+{
+    width:317px;
+}
+
+#invent_third input
+{
+     width:317px;
+}
+
+.button
+{
+    text-align: center;
+    padding-top:2%;
+}
+
+.btn
+{
+   padding:1% 2%;
+}
+
+h3
+{
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top:1%;
+}
+
+
+
+
+
