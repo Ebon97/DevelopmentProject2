@@ -23,7 +23,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+// if(is_cli()){
+    $config['base_url'] = "http://localhost/DevelopmentProject2/";
+// }
+// else if(stristr($host, "localhost") !== FALSE || (stristr($host, "192.168.") !== FALSE)|| (stristr($host, "127.0.0.") !== FALSE)){
+//     $config['base_url'] =  $protocol.$host."/DevelopmentProject2/";
+// }
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +41,7 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appoinment</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="testing.css">
+        
+    </head>
+    
+    <body>
+        <div class="container-full" >
+            <div class="row">
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <a href="#" class="navbar-brand">Smile and Style Salon</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Customer</a></li>
+                            <li><a href="#">Staff</a></li>
+                            <li><a href="#">Inventory</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report<b class="car"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Sales</a></li>
+                                    <li><a href="#">Staff</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Appointment</a></li>
+                            <li><a href="#">About Us</a></li>
+                             <li><a href=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Appointment</h3>
+            <form action="" class="main-form needs-validation" style="width:960px; margin:auto;">
+                <div class="form-inline" id="first">
+                     <div class="form-group">
+                        <label for="cust_name">Customer Name:</label>
+                         <div>
+                            <input type="text" class="form-control" id="cust_name" placeholder="Jane">
+                         </div>
+                    </div>
+                
+                    <div class="form-group" id="">
+                        <label for="hp">Telephone:</label>
+                        <div>
+                            <input type="text" class="form-control" id="hp">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-inline" id="second">
+                     <div class="form-group">
+                        <label for="service">Services 1:</label>
+                         <div>
+                            <select class="form-control">
+                                <option></option>
+                                <option>Dye Hair</option>
+                                <option>Cutting</option>
+                                <option>Washing</option>  
+                            </select>
+                         </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label for="service">Services 2:</label>
+                         <div>
+                            <select class="form-control">
+                                <option></option>
+                                <option>Dye Hair</option>
+                                <option>Cutting</option>
+                                <option>Washing</option>
+                            </select>
+                             
+                         </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label for="service">Services 3:</label>
+                         <div>
+                            <select class="form-control">
+                                <option></option>
+                                <option>Dye Hair</option>
+                                <option>Cutting</option>
+                                <option>Washing</option>
+                            </select>
+                             
+                         </div>
+                    </div>
+                
+                    <div class="form-group" id="">
+                        <label for="employee">Assigned Employee:</label>
+                        <div>
+                            <input type="text" class="form-control" id="employee">
+                        </div>
+                    </div>
+                     
+                     <div class="form-group" id="">
+                        <label for="price">Price:</label>
+                        <div>
+                            <input type="number" class="form-control" id="price">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                 
+                
+                <div class="form-group">
+                    <div class="form-inline" id="third">
+                     <div class="form-group">
+                        <label for="time">Date:</label>
+                         <div>
+                            <input type="date" class="form-control" id="date">
+                         </div>
+                    </div>
+                
+                    <div class="form-group" id="">
+                        <label for="stime">Start Time:</label>
+                        <div>
+                            <input type="time" class="form-control" id="stime">
+                        </div>
+                    </div>
+                     
+                     <div class="form-group" id="">
+                        <label for="etime">Expected End Time:</label>
+                        <div>
+                            <input type="time" class="form-control" id="exptime">
+                        </div>
+                    </div>
+                     
+                      <div class="form-group" id="">
+                        <label for="etime">Actual End Time:</label>
+                        <div>
+                            <input type="time" class="form-control" id="actualtime">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                 
+                 <div class="form-inline" id="fourth">
+                     <div class="form-group">
+                        <label for="cancel">Reason of Cancellation:</label>
+                         <div>
+                            <input type="text" class="form-control" id="cancel" placeholder="Jane">
+                         </div>
+                    </div>
+                
+                    <div class="form-group" id="">
+                        <label for="record">Recorded by:</label>
+                        <div>
+                            <input type="text" class="form-control" id="hp">
+                        </div>
+                    </div>
+                     
+                     <div class="form-group" id="">
+                        <label for="cancel_date">Date:</label>
+                        <div>
+                            <input type="date" class="form-control" id="cancel_date">
+                        </div>
+                    </div>
+                     
+                     <div class="form-group" id="">
+                        <label for="cancel_time">Time:</label>
+                        <div>
+                            <input type="time" class="form-control" id="cancel_time">
+                        </div>
+                    </div>
+                </div>    
+                    
+                <div class="button">
+                    <button type="submit" class="btn btn-success">Create</button>
+                    <button type="submit" class="btn btn-warning">Edit</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-primary">Cancel</button>
+                </div>
+                  
+            </form>
+        </div>  
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
