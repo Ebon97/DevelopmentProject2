@@ -541,26 +541,26 @@ function checkDocumentVisibility(functionToCall){
  * Check user's log in status (when page has focus) and trigger login modal if user is not logged in
  * @returns {undefined}
  */
-function checkLogin(){
-    if(document.hidden || document.onfocusout || window.onpagehide || window.onblur){
-        console.log("Window has lost focus");
-    }
+// function checkLogin(){
+//     if(document.hidden || document.onfocusout || window.onpagehide || window.onblur){
+//         console.log("Window has lost focus");
+//     }
 
-    else{//if window has focus
-        $.ajax({
-            url: appRoot+"access/css",
-            method: "GET"
-        }).done(function(returnedData){
-            //if 0 is returned as status, (meaning user's session has expired), trigger the modal to allow user to log in)
-            if(returnedData.status === 0){
-                //launch the login/signup modal
-                $("#logInModalFMsg").css('color', 'red').html("Your session has expired. Please log in to continue");
+//     else{//if window has focus
+//         $.ajax({
+//             url: appRoot+"access/css",
+//             method: "GET"
+//         }).done(function(returnedData){
+//             //if 0 is returned as status, (meaning user's session has expired), trigger the modal to allow user to log in)
+//             if(returnedData.status === 0){
+//                 //launch the login/signup modal
+//                 $("#logInModalFMsg").css('color', 'red').html("Your session has expired. Please log in to continue");
 
-                $("#logInModal").modal("show");
-            }
-        });
-    }
-}
+//                 $("#logInModal").modal("show");
+//             }
+//         });
+//     }
+// }
 
 
 
@@ -571,34 +571,34 @@ function checkLogin(){
  * @param {type} callback function to callback after execution
  * @returns {undefined}
  */
-function handleLogin(email, password, callback){
-    var jsonToReturn = "";
+// function handleLogin(email, password, callback){
+//     var jsonToReturn = "";
 
-    $.ajax(appRoot+'access/login', {
-        method: "POST",
-        data: {email:email, password:password}
-    }).done(function(returnedData){
-        if(returnedData.status === 1){
-            jsonToReturn = {status:1, msg:"Authenticated..."};
-        }
+//     $.ajax(appRoot+'access/login', {
+//         method: "POST",
+//         data: {email:email, password:password}
+//     }).done(function(returnedData){
+//         if(returnedData.status === 1){
+//             jsonToReturn = {status:1, msg:"Authenticated..."};
+//         }
 
-        else{
-            //display error messages
-            jsonToReturn = {status:0, msg:"Invalid email/password combination"};
-        }
+//         else{
+//             //display error messages
+//             jsonToReturn = {status:0, msg:"Invalid email/password combination"};
+//         }
 
-		typeof(callback) === "function" ? callback(jsonToReturn) : "";
+// 		typeof(callback) === "function" ? callback(jsonToReturn) : "";
 
-    }).fail(function(){
-        //set error message based on the internet connectivity of the user
-        var msg = "Log in failed. Please check your internet connection and try again later.";
+//     }).fail(function(){
+//         //set error message based on the internet connectivity of the user
+//         var msg = "Log in failed. Please check your internet connection and try again later.";
 
-        //display error messages
-        jsonToReturn = {status:0, msg:msg};
+//         //display error messages
+//         jsonToReturn = {status:0, msg:msg};
 
-        typeof(callback) === "function" ? callback(jsonToReturn) : "";
-    });
-}
+//         typeof(callback) === "function" ? callback(jsonToReturn) : "";
+//     });
+// }
 
 
 

@@ -32,10 +32,10 @@ DROP TABLE IF EXISTS `appointments`;
 CREATE TABLE IF NOT EXISTS `appointments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `date_created` timestamp NULL DEFAULT NULL,
-  `customer_id` int(11) NOT NULL,
+  `customers_id` int(11) NOT NULL,
   `customer_name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
   `customer_contact` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
-  `staff_id` int(11) DEFAULT NULL,
+  `staffs_id` int(11) DEFAULT NULL,
   `services_booked` int(11) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `start_time` timestamp NULL DEFAULT NULL,
@@ -44,11 +44,12 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   `price_final` decimal(10,2) DEFAULT NULL,
   `cancelled` tinyint(1) DEFAULT '0',
   `cancellation_reason` text COLLATE utf8mb4_bin,
-  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `customer_id` (`customer_id`),
-  KEY `staff_id` (`staff_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  KEY `customers_id` (`customers_id`),
+  KEY `staffs_id` (`staffs_id`),
+  KEY `services_booked` (`services_booked`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -61,13 +62,13 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_Name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
   `last_Name` varchar(25) COLLATE utf8mb4_bin NOT NULL,
-  `contact_mobile` varchar(255) COLLATE utf8mb4_bin NOT NULL,
-  `contact_email` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
-  `joined_since` datetime DEFAULT NULL,
+  `mobile` varchar(50) COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_bin DEFAULT NULL,
+  `joined_since` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `rec_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `rec_by` (`rec_by`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -79,18 +80,18 @@ DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `product_name` varchar(60) COLLATE utf8mb4_bin NOT NULL,
-  `product_category_id` int(11) DEFAULT NULL,
+  `products_category_id` int(11) DEFAULT NULL,
   `manufacturer` varchar(60) COLLATE utf8mb4_bin DEFAULT NULL,
   `type_of_use` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   `unitPrice` decimal(10,2) NOT NULL,
   `quantity` int(6) NOT NULL,
   `dateAdded` datetime NOT NULL,
-  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `product_name` (`product_name`),
-  KEY `product_category_id` (`product_category_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  KEY `products_category_id` (`products_category_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -104,23 +105,7 @@ CREATE TABLE IF NOT EXISTS `products_category` (
   `name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
   `description` text COLLATE utf8mb4_bin,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `schedules`
---
-
-DROP TABLE IF EXISTS `schedules`;
-CREATE TABLE IF NOT EXISTS `schedules` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `staff_id` int(11) NOT NULL,
-  `from` timestamp NULL DEFAULT NULL,
-  `to` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `staff_id` (`staff_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -134,20 +119,19 @@ CREATE TABLE IF NOT EXISTS `services` (
   `service_name` varchar(40) COLLATE utf8mb4_bin NOT NULL,
   `duration` int(11) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
-  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `service_name` (`service_name`),
-  KEY `package_id` (`package_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  UNIQUE KEY `service_name` (`service_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
-INSERT INTO `services` (`id`, `service_name`, `duration`, `price`, `lastUpdated`) VALUES
-(1, 'Wash & Cut(Male)', '60', '25', '2019-04-12 22:19:16');
-(2, 'Wash & Cut(Female)', '100', '45', '2019-04-12 22:19:16');
-(3, 'Wash & Cut(Children)', '60', '15', '2019-04-12 22:19:16');
-(4, 'Hair Coloring', '180', '120', '2019-04-12 22:19:16');
-(5, 'Manicure', '60', '30', '2019-04-12 22:19:16');
-(6, 'Pedicure', '60', '50', '2019-04-12 22:19:16');
+-- INSERT INTO `services` (`id`, `service_name`, `duration`, `price`, `lastUpdated`) VALUES
+-- (1, 'Wash & Cut(Male)', '60', '25', '2019-04-12 22:19:16'),
+-- (2, 'Wash & Cut(Female)', '100', '45', '2019-04-12 22:19:16'),
+-- (3, 'Wash & Cut(Children)', '60', '15', '2019-04-12 22:19:16'),
+-- (4, 'Hair Coloring', '180', '120', '2019-04-12 22:19:16'),
+-- (5, 'Manicure', '60', '30', '2019-04-12 22:19:16'),
+-- (6, 'Pedicure', '60', '50', '2019-04-12 22:19:16');
 --
 -- Table structure for table `services_booked`
 --
@@ -156,11 +140,12 @@ DROP TABLE IF EXISTS `services_booked`;
 CREATE TABLE IF NOT EXISTS `services_booked` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `appointment_id` int(11) NOT NULL,
-  `service_id` int(11) NOT NULL,
+  `services_id` int(11) NOT NULL,
   `total_price` decimal(10,2) DEFAULT NULL,
-  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `lastUpdated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `services_id` (`services_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- --------------------------------------------------------
 
@@ -171,22 +156,47 @@ CREATE TABLE IF NOT EXISTS `services_booked` (
 DROP TABLE IF EXISTS `staffs`;
 CREATE TABLE IF NOT EXISTS `staffs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `first_Name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
-  `lastName` varchar(25) COLLATE utf8mb4_bin NOT NULL,
+  `user_name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL UNIQUE,
+  `first_name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
+  `last_name` varchar(25) COLLATE utf8mb4_bin NOT NULL,
   `mobile` varchar(15) NOT NULL,
-  `password` char(60) NOT NULL,
+  `password` char(60) DEFAULT NULL,
   `role` char(5) NOT NULL,
   `created_on` datetime NOT NULL,
   `last_login` datetime NOT NULL,
   `last_seen` datetime NOT NULL,
   `last_edited` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `schedules_id` int(11) NULL DEFAULT NULL,
   `account_status` char(1) NOT NULL DEFAULT '1',
-  `deleted` char(1) NOT NULL DEFAULT '0'
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `deleted` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `schedules_id` (`schedules_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
-INSERT INTO `staffs` (`id`, `first_name`, `last_name`, `mobile`, `password`, `role`, `created_on`, `last_login`, `last_seen`, `last_edited`, `account_status`, `deleted`) VALUES
-(1, 'Admin', 'Demo', '082333999', '$2y$10$xv9I14OlR36kPCjlTv.wEOX/6Dl7VMuWCl4vCxAVWP1JwYIaw4J2C', 'Super', '2019-04-12 22:19:16', '2019-04-18 16:47:21', '2019-04-18 17:28:09', '2019-04-18 16:28:09', '1', '0');
+INSERT INTO `staffs` (`id`, `user_name`, `first_name`, `last_name`, `mobile`, `password`, `role`, `created_on`, `last_login`, `last_seen`, `last_edited`, `schedules_id`, `account_status`, `deleted`) VALUES
+(1, 'AdminDemo', 'Admin', 'Demo', '082333999', '$2y$10$xv9I14OlR36kPCjlTv.wEOX/6Dl7VMuWCl4vCxAVWP1JwYIaw4J2C', 'Super', '2019-04-12 22:19:16', '2019-04-18 16:47:21', '2019-04-18 17:28:09', '2019-04-18 16:28:09', NULL , '1', '0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `schedules`
+--
+
+DROP TABLE IF EXISTS `schedules`;
+CREATE TABLE IF NOT EXISTS `schedules` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `staffs_id` int(11) NOT NULL,
+  `from` timestamp NULL DEFAULT NULL,
+  `to` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `staffs_id` (`staffs_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eventlog`
+--
 
 DROP TABLE IF EXISTS `eventlog`;
 CREATE TABLE `eventlog` (
@@ -196,8 +206,24 @@ CREATE TABLE `eventlog` (
   `eventDesc` text,
   `eventTable` varchar(20) DEFAULT NULL,
   `staffInCharge` bigint(20) UNSIGNED NOT NULL,
-  `eventTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+  `eventTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+ALTER TABLE `appointments` ADD FOREIGN KEY (`customers_id`) REFERENCES `customers` (`id`);
+
+ALTER TABLE `appointments` ADD FOREIGN KEY (`staffs_id`) REFERENCES `staffs` (`id`);
+
+ALTER TABLE `appointments` ADD FOREIGN KEY (`services_booked`) REFERENCES `services_booked` (`id`);
+
+ALTER TABLE `customers` ADD FOREIGN KEY (`rec_by`) REFERENCES `customers` (`id`);
+
+ALTER TABLE `services_booked` ADD FOREIGN KEY (`services_id`) REFERENCES `services` (`id`);
+
+ALTER TABLE `products` ADD FOREIGN KEY (`products_category_id`) REFERENCES `products_category` (`id`);
+
+ALTER TABLE `staffs` ADD FOREIGN KEY (`schedules_id`) REFERENCES `schedules` (`id`);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

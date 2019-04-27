@@ -5,13 +5,13 @@ defined('BASEPATH') OR exit('');
 <div class="row hidden-print">
     <div class="col-sm-12">
         <div class="pwell">
-            <!-- Header (add new admin, sort order etc.) -->
+            <!-- Header (add new staff, sort order etc.) -->
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="col-sm-2 fa fa-user-plus pointer" style="color:#337ab7" data-target='#addNewAdminModal' data-toggle='modal'>
-                        New Admin
+                    <div class="col-sm-2 fa fa-user-plus pointer" style="color:#337ab7" data-target='#addNewStaffModal' data-toggle='modal'>
+                        New Staff
                     </div>
-                    <div class="col-sm-3 form-inline form-group-sm">
+                    <!-- <div class="col-sm-3 form-inline form-group-sm">
                         <label for="adminListPerPage">Show</label>
                         <select id="adminListPerPage" class="form-control">
                             <option value="1">1</option>
@@ -24,9 +24,9 @@ defined('BASEPATH') OR exit('');
                             <option value="100">100</option>
                         </select>
                         <label for="adminListPerPage">per page</label>
-                    </div>
-                    <div class="col-sm-4 form-inline form-group-sm">
-                        <label for="adminListSortBy" class="control-label">Sort by</label> 
+                    </div> -->
+                    <!-- <div class="col-sm-4 form-inline form-group-sm">
+                        <label for="adminListSortBy" class="control-label">Sort by</label>
                         <select id="adminListSortBy" class="form-control">
                             <option value="first_name-ASC" selected>Name (A to Z)</option>
                             <option value="first_name-DESC">Name (Z to A)</option>
@@ -35,40 +35,40 @@ defined('BASEPATH') OR exit('');
                             <option value="email-ASC">E-mail - ascending</option>
                             <option value="email-DESC">E-mail - descending</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="col-sm-3 form-inline form-group-sm">
-                        <label for="adminSearch"><i class="fa fa-search"></i></label>
-                        <input type="search" id="adminSearch" placeholder="Search...." class="form-control">
+                        <label for="staffSearch"><i class="fa fa-search"></i></label>
+                        <input type="search" id="staffSearch" placeholder="Search...." class="form-control">
                     </div>
                 </div>
             </div>
-            
+
             <hr>
             <!-- Header (sort order etc.) ends -->
-            
-            <!-- Admin list -->
+
+            <!-- staff list -->
             <div class="row">
-                <div class="col-sm-12" id="allAdmin"></div>
+                <div class="col-sm-12" id="allStaffs"></div>
             </div>
-            <!-- Admin list ends -->
+            <!-- staff list ends -->
         </div>
     </div>
 </div>
 
 
-<!--- Modal to add new admin --->
-<div class='modal fade' id='addNewAdminModal' role="dialog" data-backdrop="static">
+<!--- Modal to add new staff --->
+<div class='modal fade' id='addNewStaffModal' role="dialog" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class='modal-header'>
                 <button class="close" data-dismiss='modal'>&times;</button>
-                <h4 class="text-center">Add New Admin</h4>
+                <h4 class="text-center">Add New Staff</h4>
                 <div class="text-center">
                     <i id="fMsgIcon"></i><span id="fMsg"></span>
                 </div>
             </div>
             <div class="modal-body">
-                <form id='addNewAdminForm' name='addNewAdminForm' role='form'>
+                <form id='addNewStaffForm' name='addNewStaffForm' role='form'>
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='firstName' class="control-label">First Name</label>
@@ -81,8 +81,8 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="lastNameErr"></span>
                         </div>
                     </div>
-                    
-                    
+
+
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='email' class="control-label">Email</label>
@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="roleErr"></span>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='mobile1' class="control-label">Phone Number</label>
@@ -112,7 +112,7 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="mobile2Err"></span>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for="passwordOrig" class="control-label">Password:</label>
@@ -128,23 +128,23 @@ defined('BASEPATH') OR exit('');
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="reset" form="addNewAdminForm" class="btn btn-warning pull-left">Reset Form</button>
-                <button type='button' id='addAdminSubmit' class="btn btn-primary">Add Admin</button>
+                <button type="reset" form="addNewStaffForm" class="btn btn-warning pull-left">Reset Form</button>
+                <button type='button' id='addStaffSubmit' class="btn btn-primary">Add staff</button>
                 <button type='button' class="btn btn-danger" data-dismiss='modal'>Close</button>
             </div>
         </div>
     </div>
 </div>
-<!--- end of modal to add new admin --->
+<!--- end of modal to add new staff --->
 
 
-<!--- Modal for editing admin details --->
+<!--- Modal for editing staff details --->
 <div class='modal fade' id='editAdminModal' role="dialog" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class='modal-header'>
                 <button class="close" data-dismiss='modal'>&times;</button>
-                <h4 class="text-center">Edit Admin Info</h4>
+                <h4 class="text-center">Edit staff Info</h4>
                 <div class="text-center">
                     <i id="fMsgEditIcon"></i>
                     <span id="fMsgEdit"></span>
@@ -164,7 +164,7 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="lastNameEditErr"></span>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='emailEdit' class="control-label">Email</label>
@@ -181,7 +181,7 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="roleEditErr"></span>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='mobile1Edit' class="control-label">Phone Number</label>
@@ -194,8 +194,8 @@ defined('BASEPATH') OR exit('');
                             <span class="help-block errMsg" id="mobile2EditErr"></span>
                         </div>
                     </div>
-                    
-                    <input type="hidden" id="adminId">
+
+                    <input type="hidden" id="staffId">
                 </form>
             </div>
             <div class="modal-footer">
@@ -206,5 +206,5 @@ defined('BASEPATH') OR exit('');
         </div>
     </div>
 </div>
-<!--- end of modal to edit admin details --->
-<script src="<?=base_url()?>public/js/admin.js"></script>
+<!--- end of modal to edit staff details --->
+<script src="<?=base_url()?>public/js/staff.js"></script>
