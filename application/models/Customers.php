@@ -17,12 +17,11 @@ class Customers extends CI_Model{
 
     /**
      * [add description]
-     * @param [type]    [description]
-     * @param [type] $f_name   [description]
-     * @param [type] $l_name   [description]
-     * @param [type] $password [description]
-     * @param [type] $role     [description]
-     * @param [type] $mobile   [description]
+     * @param [type] $f_name [description]
+     * @param [type] $l_name [description]
+     * @param [type] $mobile [description]
+     * @param [type] $email  [description]
+     * @param [type] $rec_by [description]
      */
     public function add($f_name, $l_name, $mobile, $email, $rec_by){
         $data = ['first_name'=>$f_name, 'last_name'=>$l_name, 'mobile'=>$mobile, 'email'=>$email,
@@ -87,12 +86,12 @@ class Customers extends CI_Model{
     */
 
     /**
-     *
-     * @param type $orderBy
-     * @param type $orderFormat
-     * @param type $start
-     * @param type $limit
-     * @return boolean
+     * [getAll description]
+     * @param  string  $orderBy     [description]
+     * @param  string  $orderFormat [description]
+     * @param  integer $start       [description]
+     * @param  string  $limit       [description]
+     * @return [type]               [description]
      */
     public function getAll($orderBy = "first_name", $orderFormat = "ASC", $start = 0, $limit = ""){
         $this->db->select('id, first_name, last_name, mobile, email, joined_since, rec_by');\
@@ -119,10 +118,10 @@ class Customers extends CI_Model{
     */
 
    /**
-    *
-    * @param type $staffs_id
-    * @param type $new_value
-    * @return boolean
+    * [delete description]
+    * @param  [type] $customer_id [description]
+    * @param  [type] $new_value   [description]
+    * @return [type]              [description]
     */
     public function delete($customer_id, $new_value){
         $this->db->where('id', $customer_id);
@@ -148,9 +147,9 @@ class Customers extends CI_Model{
 
 
     /**
-     *
-     * @param type $value
-     * @return boolean
+     * [customerSearch description]
+     * @param  [type] $value [description]
+     * @return [type]        [description]
      */
     public function customerSearch($value){
         $q = "SELECT * FROM customers WHERE
@@ -185,6 +184,17 @@ class Customers extends CI_Model{
     ********************************************************************************************************************************
     */
 
+
+    /**
+     * [update description]
+     * @param  [type] $customer_id [description]
+     * @param  [type] $f_name      [description]
+     * @param  [type] $l_name      [description]
+     * @param  [type] $mobile      [description]
+     * @param  [type] $email       [description]
+     * @param  [type] $rec_by      [description]
+     * @return [type]              [description]
+     */
     public function update($customer_id, $f_name, $l_name, $mobile, $email, $rec_by){
         $data = ['first_name'=>$f_name, 'last_name'=>$l_name, 'mobile'=>$mobile, 'email'=>$email,
                     'rec_by'=>$rec_by];
