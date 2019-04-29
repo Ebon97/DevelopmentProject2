@@ -14,15 +14,15 @@ $dataPoints = array(
 	array("x"=> 110, "y"=> 36),
 	array("x"=> 120, "y"=> 49),
 	array("x"=> 130, "y"=> 41)
-);
-	
+); 
+
 ?>
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Navigaiton Bar</title>
+    <title>Home</title>
     <meta charset="utf-8">
 
 
@@ -41,10 +41,14 @@ $dataPoints = array(
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="testing.css">
     <style>
-        #piechart {
-            padding-bottom: 600px;
+        #piechart, #columnchart, #weeklysales {
+            
             width:100%;
             height:100%
+        }
+        
+        #piechart {
+            padding-bottom: 600px;
         }
 
     </style>
@@ -63,10 +67,10 @@ $dataPoints = array(
         </button>
         <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Customer</a></li>
-                <li><a href="#">Staff</a></li>
-                <li><a href="#">Inventory</a></li>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="createCustomer.html">Customer</a></li>
+                <li><a href="createStaff.html">Staff</a></li>
+                <li><a href="createInventory.html">Inventory</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report<b class="car"></b></a>
                     <ul class="dropdown-menu">
@@ -91,42 +95,42 @@ $dataPoints = array(
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="image/example/1.jpg" alt="example1" style="width:100%;">
+                <img src="image/example/9.jpg" alt="example1" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Image1</h3>
-                    <p>First Slide</p>
+                    <!--<h3>Image1</h3>
+                    <p>First Slide</p>-->
                 </div>
             </div>
 
             <div class="item">
-                <img src="image/example/2.jpg" alt="example2" style="width:100%;">
+                <img src="image/example/7.jpg" alt="example2" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Image 2</h3>
-                    <p>Second slide</p>
+                   <!-- <h3>Image 2</h3>
+                    <p>Second slide</p>-->
                 </div>
             </div>
 
             <div class="item">
-                <img src="image/example/3.jpg" alt="example3" style="width:100%;">
+                <img src="image/example/6.jpg" alt="example3" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Image 3</h3>
-                    <p>Third Slide</p>
+                   <!--  <h3>Image 3</h3>
+                    <p>Third Slide</p>-->
                 </div>
             </div>
 
             <div class="item">
-                <img src="image/example/4.jpg" alt="example4" style="width:100%;">
+                <img src="image/example/8.jpg" alt="example4" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Image 4</h3>
-                    <p>Fourth Slide</p>
+                   <!--<h3>Image 4</h3>
+                    //<p>Fourth Slide</p>-->
                 </div>
             </div>
 
             <div class="item">
                 <img src="image/example/1.jpg" alt="example5" style="width:100%;">
                 <div class="carousel-caption">
-                    <h3>Image 5</h3>
-                    <p>Fifth Slide</p>
+                   <!--  <h3>Image 5</h3>
+                    <p>Fifth Slide</p>-->
                 </div>
             </div>
         </div>
@@ -143,9 +147,9 @@ $dataPoints = array(
         </a>
 
     </div>
-    <div id='weeklysales'>
+    <div id="weeklysales">
 
-        <script src='weeklysales.js'>
+        <script src="weeklysales.js">
 
 
         </script>
@@ -162,7 +166,7 @@ $dataPoints = array(
 
     </div>
 
-    <script src=piechart.js></script>
+    <script src= "piechart.js"></script>
     <script src="columnchart.js"></script>
 
 
