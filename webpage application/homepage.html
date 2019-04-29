@@ -40,7 +40,14 @@ $dataPoints = array(
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="testing.css">
+    <style>
+        #piechart {
+            padding-bottom: 600px;
+            width:100%;
+            height:100%
+        }
 
+    </style>
 
 </head>
 
@@ -138,51 +145,27 @@ $dataPoints = array(
     </div>
     <div id='weeklysales'>
 
-        <script>
-            var myData = [240, 680, 480, 105, 400, 700, 300];
+        <script src='weeklysales.js'>
 
-            var myConfig = {
-                "graphset": [{
-                    "type": "bar",
-                    "title": {
-                        "text": "Sales of the Week"
-                    },
-                    "scale-x": {
-                        "labels": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-                    },
-                    "series": [{
-                        "values": myData
-                    }]
-                }]
-            };
-
-            zingchart.render({
-                id: 'weeklysales',
-                data: myConfig,
-                height: "100%",
-                width: "100%"
-            });
 
         </script>
 
     </div>
- 
 
 
-      <div id="chartContainer" style="height: 300px; width: 100%;">
-       
-      </div>
-      
+
+    <div id="piechart" style="height: 300px; width: 100%;">
+
+    </div>
+
     <div id="columnchart" style="height: 300px; width: 100%;">
-        
+
     </div>
-    <div>
-        
-       
-    </div>
-    <script src = "columnchart.js"></script>
+
     <script src=piechart.js></script>
-    
+    <script src="columnchart.js"></script>
+
+
 </body>
 
 </html>

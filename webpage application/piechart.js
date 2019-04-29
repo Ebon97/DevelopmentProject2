@@ -1,12 +1,12 @@
-window.onload = function() {
 
-var chart = new CanvasJS.Chart("chartContainer", {
+
+var chart = new CanvasJS.Chart("piechart", {
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	exportEnabled: true,
     height: 500,
 	animationEnabled: true,
 	title: {
-		text: "Sales Percentages per Service of the Last Month"
+		text: "Sales Percentages per Service of the Month to Date"
 	},
 	data: [{
 		type: "pie",
@@ -26,4 +26,3 @@ var chart = new CanvasJS.Chart("chartContainer", {
 });
 chart.render();
 
-}
