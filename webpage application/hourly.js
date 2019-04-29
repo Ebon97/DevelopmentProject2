@@ -1,5 +1,4 @@
-
- 
+/*
 var chart = new CanvasJS.Chart("hourly", {
 	animationEnabled: true,
 	title: {
@@ -14,7 +13,7 @@ var chart = new CanvasJS.Chart("hourly", {
 	},
 	data: [{
 		type: "line",
-		name: "CPU Utilization",
+		name: "hourly",
 		connectNullData: true,
 		//nullDataLineDashType: "solid",
 		xValueType: "dateTime",
@@ -30,9 +29,10 @@ var chart = new CanvasJS.Chart("hourly", {
 			{ x: 1501070273000, y: 23.508 },
 			{ x: 1501073873000, y: 18.577 },
 			{ x: 1501077473000, y: 15.918 },
-			{ x: 1501081073000, y: null }, // Null Data
+
 			{ x: 1501084673000, y: 10.314 },
 			{ x: 1501088273000, y: 10.574 },
+						{ x: 1501081073000, y: null }, // Null Data
 			{ x: 1501091873000, y: 14.422 },
 			{ x: 1501095473000, y: 18.576 },
 			{ x: 1501099073000, y: 22.342 },
@@ -47,4 +47,89 @@ var chart = new CanvasJS.Chart("hourly", {
 });
 chart.render();
  
-      
+      */
+
+var chart = new CanvasJS.Chart("hourly", {
+    animationEnabled: true,
+    theme: "light2",
+    title: {
+        text: "Hourly Average Appointments"
+    },
+ axisX: {
+        title: "Time of the day (24h)",
+        
+    },
+
+    axisY: {
+        title: "Number of Appointments",
+        includeZero: false
+    },
+    data: [{
+        type: "line",
+        dataPoints: [
+            {
+                x: 8,
+                y: 1
+            },
+            {
+                x: 9,
+                y: 2
+            },
+            {
+                x: 10,
+                y: 4
+            },
+            /*, indexLabel: "highest",markerColor: "red", markerType: "triangle" },*/
+            {
+                x: 11,
+                y: 5
+            },
+            {
+                x: 12,
+                y: 4
+            },
+            {
+                x: 13,
+                y: 5
+            },
+            {
+                x: 14,
+                y: 4
+            },
+            {
+                x: 15,
+                y: 6
+            },
+            {
+                x: 16,
+                y: 4
+            },
+            /*indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" */
+            {
+                x: 17,
+                y: 5
+            },
+            {
+                x: 18,
+                y: 4
+            },
+            {
+                x: 19,
+                y: 3
+            },
+            {
+                x: 20,
+                y: 2
+            },
+            {
+                x: 21,
+                y: 2
+            },
+            {
+                x: 22,
+                y: 1
+            }
+		]
+	}]
+});
+chart.render();
