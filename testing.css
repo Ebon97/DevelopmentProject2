@@ -1,0 +1,442 @@
+
+body
+{
+    background: white;
+    color:goldenrod;
+}
+
+/*Navigation Bar*/
+.navbar
+{
+    margin-bottom: 0;
+}
+
+.navbar .navbar-brand
+{
+    color:goldenrod;
+}
+
+.collapse .navbar-nav
+{
+    color:goldenrod;
+}
+
+.nav li a
+{
+    
+}
+
+
+.size
+{
+    width:100%;
+}
+
+.bg
+{
+    background: url('image/salon.jpg') no-repeat;
+    padding-bottom: 211px;
+}
+
+
+/*Form*/
+.form-container
+{
+    border-radius: 50px;
+    padding-top:20px;
+    padding-bottom: 50px;
+    padding-left:50px;
+    padding-right:50px;
+    margin-top:40%;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+
+}
+
+
+.index-form
+{
+    padding-top:30px;
+}
+
+
+
+form
+{
+    padding-bottom: 5%;
+    
+}
+
+.form-group 
+{
+    float:inherit;
+    
+}
+
+.form-group small
+{
+    color:red;
+}
+
+/*Valid & Invalid */
+/*Staff*/
+#valFname
+{
+    margin-left: 130px;
+}
+
+#valLname
+{
+    margin-left: 130px;
+}
+
+#valEmail
+{
+    margin-left:166px;
+}
+
+#valHp
+{
+    margin-left:147px;
+}
+
+#valAge
+{
+    margin-left:80px;
+}
+
+#valBirth
+{
+    margin-left:76px;
+}
+
+#valJoin
+{
+    margin-left:40px;
+}
+
+#valSalary
+{
+    margin-left:80px;
+}
+
+/*Appointment*/
+#valCname
+{
+     margin-left: 100px;
+}
+
+#valPrice
+{
+    margin-left: 20px;
+}
+
+#valDate
+{
+    margin-left: 70px;
+}
+
+#valStime
+{
+     margin-left: 40px;
+}
+
+#valEtime
+{
+    margin-left: 14px;
+}
+
+
+/*Asterik*/
+.form-group.required .ast:before
+{
+    content:"*";
+    color:red;
+}
+
+
+/*Input box control*/
+#staff_first input
+{
+    width:282px;
+}
+
+
+
+#staff_second
+{
+    padding-top:2%;
+}
+
+#staff_second input
+{
+    width:282px;
+}
+
+#staff_third
+{
+    padding-top:2%;
+}
+#staff_third input
+{
+    width:233px;
+}
+
+#staff_fourth input
+{
+    width:212px;
+    
+}
+
+
+#cust_first
+{
+    padding-bottom: 1.5%;
+}
+
+#cust_first input
+{
+    width:282px;
+}
+
+#cust_second input
+{
+    width:282px;
+}
+
+#cust_third input
+{
+    width:154px;
+}
+
+#appoint_first input
+{
+    width:282px;
+}
+
+#appoint_second 
+{
+    padding-top:2%;
+}
+
+
+#appoint_second input
+{
+    width:123px;
+}
+
+#appoint_third input
+{
+    width:186.5px;
+}
+
+#appoint_fourth
+{
+    padding-bottom: 3.15%;
+}
+
+#appoint_fourth input
+{
+    width:282px;
+    
+}
+
+#invent_first input
+{
+    width:218px;
+}
+
+#invent_second input
+{
+    width:186px;
+}
+
+#invent_third input
+{
+     width:186px;
+}
+
+/*Button*/
+.button
+{
+    text-align: center;
+    padding-top:2%;
+    color:white;
+    font-weight: bold;
+}
+
+
+.btn
+{
+   padding:1% 5%;
+    background-color:goldenrod;
+    font-weight: bold;
+}
+
+.modal-footer
+{
+    color:white;
+}
+
+/*Please fill up the required column*/
+#alertMessage
+{
+    color:red;
+    font-style: italic;
+}
+
+h3
+{
+    font-size: 200%;
+    text-align: center;
+    padding-top:1%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+/*Title / Instruction*/
+p
+{
+    text-align: center;
+    padding-bottom: 2%;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+h5
+{
+    font-weight: bold;
+}
+
+/*Footer*/
+.footer h5
+{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    text-align: center;
+}
+
+
+/*Team*/
+*
+{
+    margin:0;
+    padding:0;
+    
+}
+
+.team-section
+{
+    overflow: hidden;
+    text-align: center;
+    padding-top:10px;
+}
+
+.team-section h1
+{
+    text-transform: uppercase;
+    color:goldenrod;
+    font-size: 48px;
+}
+
+.border
+{
+    display:block;
+    margin:auto;
+    width:160px;
+    height:3px;
+    background: red;
+    margin-bottom:30px;
+}
+
+.ps
+{
+    margin-bottom:30px;
+}
+
+.ps a 
+{
+    display:inline-block;
+    margin:10px 10px;
+    width:190px;
+    height:190px;
+    overflow: hidden;
+    border-radius: 50%;
+    
+}
+
+.ps a img
+{
+    width:100%;
+    filter:grayscale(100%);
+    transition:0.4s all;
+}
+
+.ps a:hover > img
+{
+    filter:none;
+}
+
+.section
+{
+    width:900px;
+    margin: auto;
+    font-size: 15px;
+    color:goldenrod;
+    height: 0;
+    overflow: hidden;
+    
+}
+
+.section:target
+{
+    height:auto;
+    
+}
+
+.name
+{
+    display:block;
+    margin-bottom: 5px;
+    text-align:center;
+    text-transform: uppercase;
+    font-size: 30px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

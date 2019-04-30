@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Staff Profile</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="testing.css">
+        
+    </head>
+    
+    <body>
+        <div class="container-full" >
+            <div class="row">
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <a href="#" class="navbar-brand">Smile and Style Salon</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="createCustomer.html">Customer</a></li>
+                            <li><a href="createStaff.html">Staff</a></li>
+                            <li><a href="createInventory.html">Inventory</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report  <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Sales</a></li>
+                                    <li><a href="#">Staff</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="createAppointment.html">Appointment</a></li>
+                            <li><a href="aboutUs.html">About Us</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="button">
+                <button class="btn" data-toggle="modal" data-target="#mymodal">Create</button>
+                <button type="submit" class="btn">Edit</button>
+            </div>
+            
+            <form action="#"  style="width:960px; margin:auto;" onsubmit="return staffValidation()">
+                <div class="modal" id="mymodal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Staff</h3>
+                                 <p>Please use following form to key in the right input</p>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-inline" id="staff_first">
+                                     <div class="form-group required">
+                                        <label class="ast" for="fname">First Name:</label>
+                                         <small id="valFname"></small>
+                                         <div>
+                                            <input type="text" class="form-control" id="fname" placeholder="Jane" autocomplete="off">
+                                         </div>
+                                    </div>
+                                    
+                                    <div class="form-group required" id="">
+                                        <label class="ast" for="lname">Last Name:</label>
+                                         <small id="valLname"></small>
+                                        <div>
+                                            <input type="text" class="form-control" id="lname" placeholder="Doe" autocomplete="off">
+                                        </div>
+                                        
+                                    </div>
+                                         
+                                </div>
+                                
+                                <div class="form-inline" id="staff_second">
+                                    <div class="form-group required" >
+                                        <label class="ast" for="lname">Email:</label>
+                                        <small id="valEmail"></small>
+                                        <div>
+                                            <input type="email" class="form-control" id="email" placeholder="jane.doe@example.com" autocomplete="off">
+                                        </div>
+                                       
+                                    </div>
+                                    
+                                    <div class="form-group required">
+                                        <label class="ast" for="lname">Telephone:</label>
+                                        <small id="valHp"></small>
+                                        <div>
+                                            <input type="text" class="form-control" id="hp" placeholder="01X-XXX-XXXX" autocomplete="off">
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group" id="staff_third">
+                                    <div class="form-inline">
+                                        <div class="form-group required">
+                                            <label class="ast" for="gender">Gender</label>
+                                            <!--<small id="valGender"></small>-->
+                                            <div>
+                                                <select class="form-control" id="gender" name="gender">
+                                                    <option></option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required">
+                                            <label class="ast" for="age">Age:</label>
+                                            <small id="valAge"></small>
+                                            <div>
+                                                <input type="number" class="form-control" id="age" autocomplete="off">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="age">Date of Birth:</label>
+                                            <small id="valBirth"></small>
+                                            <div>
+                                                <input type="date" class="form-control" id="birth">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                                    
+                                <div class="form-group" id="staff_fourth">
+                                    <div class="form-inline">
+                                        <div class="form-group required">
+                                            <label class="ast" for="join">Joined Since:</label>
+                                            <small id="valJoin"></small>
+                                            <div>
+                                                <input type="date" class="form-control" id="join">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required">
+                                            <label class="ast" for="salary">Salary:</label>
+                                            <small id="valSalary"></small>
+                                            <div>
+                                                <input type="number" class="form-control" id="salary" autocomplete="off">
+                                            </div>
+                                        </div>
+                        
+                                        <div class="form-group required">
+                                            <label class="ast" for="position">Position:</label>
+                                            <!--<small id="valPos"></small>-->
+                                            <div>
+                                                <select class="form-control" id="pos" name="pos">
+                                                    <option></option>
+                                                    <option>Administration</option>
+                                                    <option>Hairdresser</option>
+                                                    <option>Cashier</option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                    
+                                <div id="staff_fifth">
+                                    <div class="form-group">
+                                        <label for="comment">Comments:</label>
+                                            <div>
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="alertMessage">
+                                    <small>* Please fill up the required information</small>
+                                </div>
+                        </div>
+                            
+                            <div class="modal-footer">
+                                <input type="submit" name="create" value="Create">
+                                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  
+            </form>
+         
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-full">
+                    <div class="footer">
+                        <h5>Site Built by ????</h5>
+                        <h5>Copyright &copy; Style and Salon 2019</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            function staffValidation()
+            {
+                var fname = document.getElementById('fname').value;
+                var lname = document.getElementById('lname').value;
+                var email = document.getElementById('email').value;
+                var hp = document.getElementById('hp').value;
+                var age = document.getElementById('age').value;
+                var birth = document.getElementById('birth').value;
+                var join = document.getElementById('join').value;
+                var salary = document.getElementById('salary').value;
+                
+                //var gender = form.gender.selectedIndex;
+                //var pos = form.pos.selectedIndex;
+                
+                
+                var valFname = document.getElementById('valFname');
+                var valLname = document.getElementById('valLname');
+                var valEmail = document.getElementById('valEmail');
+                var valHp = document.getElementById('valHp');
+                var valAge = document.getElementById('valAge');
+                var valBirth = document.getElementById('valBirth');
+                var valJoin = document.getElementById('valJoin');
+                var valSalary = document.getElementById('valSalary');
+                
+                //var valGender = document.getElementById('valGender');
+                //var valPos = document.getElementById('valPos');
+                
+                
+                var regFname = /^[a-zA-z]+$/;
+                var regLname = /^[a-zA-z]+$/;
+                var regEmail = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})$/;
+                var regHp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                var regAge = /^[0-9]+$/;
+                var regSalary = /^[0-9]+$/;
+    
+                
+                //Firstname
+                if(fname != "" && regFname.test(fname))
+                    {
+                        valFname.innerHTML = "Valid";
+                        valFname.style.color = "green";
+                        valFname.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valFname.innerHTML = "Invalid";
+                        valFname.style.color = "red";
+                        valFname.style.fontWeight = "bold";
+                        //return false;
+                    }
+                
+                //Last Name
+                if(lname != "" && regLname.test(lname))
+                    {
+                        valLname.innerHTML = "Valid";
+                        valLname.style.color = "green";
+                        valLname.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valLname.innerHTML = "Invalid";
+                        valLname.style.color = "red";
+                        valLname.style.fontWeight = "bold";
+                        //return false;
+                    }
+                
+                
+                //Email
+                if(email != "" && regEmail.test(email))
+                    {
+                        valEmail.innerHTML = "Valid";
+                        valEmail.style.color = "green";
+                        valEmail.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valEmail.innerHTML = "Invalid";
+                        valEmail.style.color = "red";
+                        valEmail.style.fontWeight = "bold";
+                        //return false;
+                    }
+                
+                
+                //Hp
+                 if(hp != "" && regHp.test(hp))
+                    {
+                        valHp.innerHTML = "Valid";
+                        valHp.style.color = "green";
+                        valHp.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valHp.innerHTML = "Invalid";
+                        valHp.style.color = "red";
+                        valHp.style.fontWeight = "bold";
+                         //return false;
+                        
+                    }
+                
+                //Age
+                 if(age != "" && regAge.test(age))
+                    {
+                        valAge.innerHTML = "Valid";
+                        valAge.style.color = "green";
+                        valAge.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valAge.innerHTML = "Invalid";
+                        valAge.style.color = "red";
+                        valAge.style.fontWeight = "bold";
+                        //return false;
+                    }
+                
+                //DOB
+                 if(birth != "")
+                    {
+                        valBirth.innerHTML = "Valid";
+                        valBirth.style.color = "green";
+                        valBirth.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valBirth.innerHTML = "Invalid";
+                        valBirth.style.color = "red";
+                        valBirth.style.fontWeight = "bold";
+                        //return false;
+                    }
+              
+                //Join
+                 if(join != "")
+                    {
+                        valJoin.innerHTML = "Valid";
+                        valJoin.style.color = "green";
+                        valJoin.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valJoin.innerHTML = "Invalid";
+                        valJoin.style.color = "red";
+                        valJoin.style.fontWeight = "bold";
+                        //return false;
+                    }
+                
+                //Salary
+                 if(salary != "" && regSalary.test(salary))
+                    {
+                        valSalary.innerHTML = "Valid";
+                        valSalary.style.color = "green";
+                        valSalary.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valSalary.innerHTML = "Invalid";
+                        valSalary.style.color = "red";
+                        valSalary.style.fontWeight = "bold";
+                        //return false;
+                    }
+              
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

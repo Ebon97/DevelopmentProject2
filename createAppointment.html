@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Appoinment</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="testing.css">
+        
+    </head>
+    
+    <body>
+        <div class="container-full" >
+            <div class="row">
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <a href="#" class="navbar-brand">Smile and Style Salon</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="createCustomer.html">Customer</a></li>
+                            <li><a href="createStaff.html">Staff</a></li>
+                            <li><a href="createInventory.html">Inventory</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report  <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Sales</a></li>
+                                    <li><a href="#">Staff</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="createAppointment.html">Appointment</a></li>
+                            <li><a href="aboutUs.html">About Us</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button">
+                <button type="submit" class="btn" data-toggle="modal" data-target="#appoint_modal">Create</button>
+                <button type="submit" class="btn">Edit</button>
+            </div>
+            
+            <form action="#" style="width:960px; margin:auto;" onsubmit="return apptValidation()">
+                 <div class="modal" id="appoint_modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Appointment</h3>
+                                <p>Please use following form to key in the right input</p>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-inline" id="appoint_first">
+                                     <div class="form-group required">
+                                        <label class="ast" for="cname">Customer Name:</label>
+                                         <small id="valCname"></small>
+                                         <div>
+                                            <input type="text" class="form-control" id="cname" placeholder="Jane Doe" autocomplete="off">
+                                         </div>
+                                    </div>
+                
+                                    <div class="form-group required">
+                                        <label class="ast" for="hp">Telephone:</label>
+                                        <small id="valHp"></small>
+                                        <div>
+                                            <input type="text" class="form-control" id="hp" placeholder="01X-XXX-XXXX" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="form-group">
+                                    <div class="form-inline" id="appoint_second">
+                                        <div class="form-group required">
+                                            <label class="ast" for="service">Services 1:</label>
+                                             <div>
+                                                <select class="form-control">
+                                                    <option></option>
+                                                    <option>Dye Hair</option>
+                                                    <option>Cutting</option>
+                                                    <option>Washing</option>  
+                                                </select>
+                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="service">Services 2:</label>
+                                             <div>
+                                                <select class="form-control">
+                                                    <option></option>
+                                                    <option>Dye Hair</option>
+                                                    <option>Cutting</option>
+                                                    <option>Washing</option>
+                                                </select>
+
+                                             </div>
+                                        </div>
+                        
+                                        <div class="form-group">
+                                            <label for="service">Services 3:</label>
+                                             <div>
+                                                <select class="form-control">
+                                                    <option></option>
+                                                    <option>Dye Hair</option>
+                                                    <option>Cutting</option>
+                                                    <option>Washing</option>
+                                                </select>
+
+                                             </div>
+                                        </div>
+                                    
+                                        <div class="form-group required">
+                                            <label class="ast" for="employee">Employee:</label>
+                                            <small id="valEmp"></small>
+                                            <div>
+                                                <input type="text" class="form-control" id="employee" autocomplete="off">
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group required">
+                                            <label class="ast" for="price">Price:</label>
+                                             <small id="valPrice"></small>
+                                            <div>
+                                                <input type="number" class="form-control" id="price" autocomplete="off">
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-inline" id="appoint_third">
+                                        <div class="form-group required">
+                                            <label class="ast" for="time">Date:</label>
+                                            <small id="valDate"></small>
+                                            <div>
+                                                <input type="date" class="form-control" id="date">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required" id="">
+                                            <label class="ast" for="stime">Start Time:</label>
+                                            <small id="valStime"></small>
+                                            <div>
+                                                <input type="time" class="form-control" id="stime">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required" id="">
+                                            <label class="ast" for="etime">Actual End Time:</label>
+                                            <small id="valEtime"></small>
+                                            <div>
+                                                <input type="time" class="form-control" id="etime">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-inline" id="appoint_fourth">
+                                    <div class="form-group">
+                                        <label for="cancel">Reason of Cancellation:</label>
+                                            <div>
+                                            <input type="text" class="form-control" id="cancel" autocomplete="off">
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group" id="">
+                                        <label for="record">Recorded by:</label>
+                                        <div>
+                                            <input type="text" class="form-control" id="hp" autocomplete="off">
+                                        </div>
+                                    </div>
+                                </div>   
+                                
+                                <div id="alertMessage">
+                                    <small>* Please fill up the required information</small>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <input type="submit" name="create" value="Create">
+                                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </form>
+        
+        
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-full">
+                    <div class="footer">
+                        <h5>Site Built by ????</h5>
+                        <h5>Copyright &copy; Style and Salon 2019</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            function apptValidation()
+            {
+    
+                var cname = document.getElementById('cname').value;
+                var hp = document.getElementById('hp').value;
+                var employee = document.getElementById('employee').value;
+                var price = document.getElementById('price').value;
+                var date = document.getElementById('date').value;
+                var stime = document.getElementById('stime').value;
+                var etime = document.getElementById('etime').value;
+                
+                //var service = document.getElementById('service');
+                
+                var valCname = document.getElementById('valCname');
+                var valHp = document.getElementById('valHp');
+                var valEmp = document.getElementById('valEmp');
+                var valPrice = document.getElementById('valPrice');
+                var valDate = document.getElementById('valDate');
+                var valStime = document.getElementById('valStime');
+                var valEtime = document.getElementById('valEtime');
+                
+                
+                var regCname = /^[a-zA-Z]+$/;
+                var regHp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                var regEmployee = /^[a-zA-Z]+$/;
+                var regPrice = /^[0-9]+$/;
+                
+                //Customer Name
+               if(cname != "" && regCname.test(cname))
+                   {
+                        valCname.innerHTML = "Valid";
+                        valCname.style.color = "green";
+                        valCname.style.fontWeight = "bold";
+                   }
+                else
+                    {
+                        valCname.innerHTML = "Invalid";
+                        valCname.style.color = "red";
+                        valCname.style.fontWeight = "bold";
+                    }
+                
+                //Telephone
+                 if(hp != "" && regHp.test(hp))
+                    {
+                        valHp.innerHTML = "Valid";
+                        valHp.style.color = "green";
+                        valHp.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valHp.innerHTML = "Invalid";
+                        valHp.style.color = "red";
+                        valHp.style.fontWeight = "bold";
+                         //return false;
+                        
+                    }
+                
+                //Employee
+                 if(employee != "" && regEmployee.test(employee))
+                    {
+                        valEmp.innerHTML = "Valid";
+                        valEmp.style.color = "green";
+                        valEmp.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valEmp.innerHTML = "Invalid";
+                        valEmp.style.color = "red";
+                        valEmp.style.fontWeight = "bold";
+                         //return false;
+                        
+                    }
+                
+                //Price
+                 if(price != "" && regPrice.test(price))
+                    {
+                        valPrice.innerHTML = "Valid";
+                        valPrice.style.color = "green";
+                        valPrice.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valPrice.innerHTML = "Invalid";
+                        valPrice.style.color = "red";
+                        valPrice.style.fontWeight = "bold";
+                         //return false;
+                        
+                    }
+                
+                //Date
+                if(date == "")
+                    {
+                        valDate.innerHTML = "Invalid";
+                        valDate.style.color = "red";
+                        valDate.style.fontWeight = "bold";
+                    
+                    }
+                else 
+                    {
+                        valDate.innerHTML = "Valid";
+                        valDate.style.color = "green";
+                        valDate.style.fontWeight = "bold";
+                         //return false;
+                        
+                    }
+                
+                //Start Time
+                if(stime == "")
+                    {
+                        valStime.innerHTML = "Invalid";
+                        valStime.style.color = "red";
+                        valStime.style.fontWeight = "bold";
+                        
+                        
+                    }
+                else 
+                    {
+                        valStime.innerHTML = "Valid";
+                        valStime.style.color = "green";
+                        valStime.style.fontWeight = "bold";
+                         //return false;
+                    }
+                
+                 //End Time
+                if(etime != "")
+                    {
+                        valEtime.innerHTML = "Valid";
+                        valEtime.style.color = "green";
+                        valEtime.style.fontWeight = "bold";
+                        
+                    }
+                else 
+                    {
+                        valEtime.innerHTML = "Invalid";
+                        valEtime.style.color = "red";
+                        valEtime.style.fontWeight = "bold";
+                         //return false;
+                    }
+
+                
+            }
+        </script>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inventoy Stock</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="testing.css">
+        
+    </head>
+    
+    <body>
+        <div class="container-full" >
+            <div class="row">
+                <div class="navbar navbar-inverse navbar-static-top">
+                    <a href="#" class="navbar-brand">Smile and Style Salon</a>
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse navHeaderCollapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="homepage.html">Home</a></li>
+                            <li><a href="createCustomer.html">Customer</a></li>
+                            <li><a href="createStaff.html">Staff</a></li>
+                            <li><a href="createInventory.html">Inventory</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report  <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Sales</a></li>
+                                    <li><a href="#">Staff</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="createAppointment.html">Appointment</a></li>
+                            <li><a href="aboutUs.html">About Us</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="button">
+                <button type="submit" class="btn" data-toggle="modal" data-target="#int_modal">Create</button>
+                <button type="submit" class="btn">Delete</button>
+            </div>
+            
+            <form action="" class="main-form needs-validation" style="width:960px; margin:auto;" onsubmit="return invtValidation()"> 
+                <div class="modal" id="int_modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>Inventory Stock</h3>
+                                <p>Please use following form to key in the right input</p>
+                            </div>
+                            
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="form-inline" id="invent_first">
+                                        <div class="form-group required">
+                                            <label class="ast" for="pcategory">Category:</label>
+                                                 <div>
+                                                    <select class="form-control">
+                                                        <option>Hair product</option>
+                                                        <option>Tools</option>
+                                                        <option>Facilities</option>
+                                                     </select>
+                                                 </div>
+                                        </div>
+
+                                        <div class="form-group" id="">
+                                            <label for="pName">Product Name:</label>
+                                            <div>
+                                                <input type="text" class="form-control" id="prodName" required>
+                                            </div>
+                                        </div>
+                         
+                                        <div class="form-group" id="">
+                                            <label for="use">Type of Use:</label>
+                                            <div>
+                                                <input type="text" class="form-control" id="use" required>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="form-inline" id="invent_second">
+                                        <div class="form-group required" >
+                                            <label class="ast" for="quantity">Quantity:</label>
+                                            <div>
+                                                <input type="number" class="form-control" id="quantity">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required" id="">
+                                            <label class="ast" for="cost">Cost:</label>
+                                            <div>
+                                                <input type="number" class="form-control" id="cost">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" id="">
+                                            <label for="manufac">Manufacturer:</label>
+                                            <div>
+                                                <input type="text" class="form-control" id="manufac">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group" id="invent_third">
+                                    <div class="form-inline">
+                                        <div class="form-group required">
+                                            <label class="ast" for="invent_record">Recorded By:</label>
+                                            <div id="invent_record">
+                                                 <input type="text" class="form-control" id="invent_record" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group required">
+                                            <label class="ast" for="invent_date">Date:</label>
+                                            <div>
+                                                <input type="date" class="form-control" required>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-group required">
+                                            <label class="ast" for="invent_time">Time:</label>
+                                            <div>
+                                                <input type="time" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="form-group">
+                                    <label for="lname">Comments:</label>
+                                     <div>
+                                        <textarea class="form-control"></textarea>
+                                     </div>
+                                </div>
+                                
+                                 <div id="alertMessage">
+                                    <small>* Please fill up the required information</small>
+                                </div>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn" >Create</button>
+                                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </form>
+            
+            <div class="navbar navbar-inverse navbar-fixed-bottom">
+                <div class="container-full">
+                    <div class="footer">
+                        <h5>Site Built by ????</h5>
+                        <h5>Copyright &copy; Style and Salon 2019</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
