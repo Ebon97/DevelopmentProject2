@@ -11,7 +11,7 @@ class Customers extends CI_Controller{
 
         // $this->genlib->superOnly();
 
-        $this->load->model(['customers']);
+        $this->load->model(['customer']);
     }
 
     /*
@@ -39,15 +39,15 @@ class Customers extends CI_Controller{
     */
 
     /**
-     * lac_ = "Load all customers"
+     * lacus_ = "Load all customers"
      */
-    public function laad_(){
+    public function lacus_(){
         //set the sort order
         $orderBy = $this->input->get('orderBy', TRUE) ? $this->input->get('orderBy', TRUE) : "first_name";
         $orderFormat = $this->input->get('orderFormat', TRUE) ? $this->input->get('orderFormat', TRUE) : "ASC";
 
         //count the total customers in db (excluding the currently logged in customer)
-        $totalstaff = count($this->customers->getAll());
+        $totalCustomers = count($this->customers->getAll());
 
         $this->load->library('pagination');
 
@@ -57,7 +57,7 @@ class Customers extends CI_Controller{
         $start = $pageNumber == 0 ? 0 : ($pageNumber - 1) * $limit;//start from 0 if pageNumber is 0, else start from the next iteration
 
         //call setPaginationConfig($totalRows, $urlToCall, $limit, $attributes) in genlib to configure pagination
-        $config = $this->genlib->setPaginationConfig($totalCustomers, "customers/laad_", $limit, ['class'=>'lnp']);
+        $config = $this->genlib->setPaginationConfig($totalCustomers, "customers/lacus_", $limit, ['class'=>'lnp']);
 
         $this->pagination->initialize($config);//initialize the library class
 
@@ -67,7 +67,7 @@ class Customers extends CI_Controller{
         $data['links'] = $this->pagination->create_links();//page links
         $data['sn'] = $start+1;
 
-        $json['staffTable'] = $this->load->view('customers/customerslist', $data, TRUE);//get view with populated customers table
+        $json['customerTable'] = $this->load->view('customers/customerslist', $data, TRUE);//get view with populated customers table
 
         $this->output->set_content_type('application/json')->set_output(json_encode($json));
     }
@@ -101,7 +101,7 @@ class Customers extends CI_Controller{
             'is_unique[customers.mobile]', 'callback_validateContacts'],
             ['required'=>"required", 'is_unique'=>"This number is already attached to a customer"]);
 
-        $this->form_validation->set_rules('rec_by', 'Recommendded by', ['trim', 'max_length[20]', 'strtolower', 'ucfirst']);
+        // $this->form_validation->set_rules('rec_by', 'Recommendded by', ['trim', 'max_length[20]', 'strtolower', 'ucfirst']);
 
 
         if($this->form_validation->run() !== FALSE){
@@ -109,11 +109,10 @@ class Customers extends CI_Controller{
              * insert info into db
              * function header: add($f_name, $l_name, $user_name, $password, $role, $mobile1, $mobile2)
              */
-            // $hashedPassword = password_hash(set_value('passwordOrig'), PASSWORD_BCRYPT);
 
-            $inserted = $this->customers->add(,set_value('firstName'), set_value('lastName'),set_value('email'),
-                set_value('mobile'), set_value('rec_by') );
-
+            $inserted = $this->customers->add(set_value('firstName'), set_value('lastName'),set_value('email'),
+                set_value('mobile') );
+            // , set_value('rec_by')
 
             $json = $inserted ?
                 ['status'=>1, 'msg'=>"Customer successfully added"]

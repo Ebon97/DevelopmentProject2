@@ -62,7 +62,7 @@ defined('BASEPATH') OR exit('');
         </table>
     </div>
     <?php else:?>
-    No Administrative Accounts
+    No Staff Accounts
     <?php endif; ?>
 </div>
 <!-- Pagination -->

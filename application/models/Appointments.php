@@ -37,7 +37,7 @@ class Appointments extends CI_Controller{
                 appointments.cust_name, appointments.customer_contact
                 FROM appointments
                 LEFT OUTER JOIN admin ON appointments.staff_id = admin.id
-                GROUP Bs.id
+                GROUP BY id
                 ORDER BY {$orderBy} {$orderFormat}
                 LIMIT {$limit} OFFSET {$start}";
 
@@ -53,7 +53,7 @@ class Appointments extends CI_Controller{
 
             $this->db->join('admin', 'appointments.staff_id = admin.id', 'LEFT');
             $this->db->limit($limit, $start);
-            $this->db->group_bys.id');
+            $this->db->group_by('id');
             $this->db->order_by($orderBy, $orderFormat);
 
             $run_q = $this->db->get('appointments');

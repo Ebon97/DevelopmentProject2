@@ -8,12 +8,12 @@ defined('BASEPATH') OR exit('');
             <!-- Header (add new staff, sort order etc.) -->
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="col-sm-2 fa fa-user-plus pointer" style="color:#337ab7" data-target='#addNewStaffModal' data-toggle='modal'>
-                        New Staff
+                    <div class="col-sm-2 fa fa-user-plus pointer" style="color:#337ab7" data-target='#addNewCustomerModal' data-toggle='modal'>
+                        New Customer
                     </div>
-                    <!-- <div class="col-sm-3 form-inline form-group-sm">
-                        <label for="adminListPerPage">Show</label>
-                        <select id="adminListPerPage" class="form-control">
+                    <div class="col-sm-3 form-inline form-group-sm">
+                        <label for="customerListPerPage">Show</label>
+                        <select id="customerListPerPage" class="form-control">
                             <option value="1">1</option>
                             <option value="5">5</option>
                             <option value="10" selected>10</option>
@@ -23,11 +23,11 @@ defined('BASEPATH') OR exit('');
                             <option value="50">50</option>
                             <option value="100">100</option>
                         </select>
-                        <label for="adminListPerPage">per page</label>
-                    </div> -->
-                    <!-- <div class="col-sm-4 form-inline form-group-sm">
-                        <label for="adminListSortBy" class="control-label">Sort by</label>
-                        <select id="adminListSortBy" class="form-control">
+                        <label for="customerListPerPage">per page</label>
+                    </div>
+                    <div class="col-sm-4 form-inline form-group-sm">
+                        <label for="customerListSortBy" class="control-label">Sort by</label>
+                        <select id="customerListSortBy" class="form-control">
                             <option value="first_name-ASC" selected>Name (A to Z)</option>
                             <option value="first_name-DESC">Name (Z to A)</option>
                             <option value="created_on-ASC">Date Created (older first)</option>
@@ -35,11 +35,11 @@ defined('BASEPATH') OR exit('');
                             <option value="email-ASC">E-mail - ascending</option>
                             <option value="email-DESC">E-mail - descending</option>
                         </select>
-                    </div> -->
-                    <div class="col-sm-3 form-inline form-group-sm">
+                    </div>
+                    <!-- <div class="col-sm-3 form-inline form-group-sm">
                         <label for="staffSearch"><i class="fa fa-search"></i></label>
                         <input type="search" id="staffSearch" placeholder="Search...." class="form-control">
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('');
 
             <!-- staff list -->
             <div class="row">
-                <div class="col-sm-12" id="allStaffs"></div>
+                <div class="col-sm-12" id="allCustomers"></div>
             </div>
             <!-- staff list ends -->
         </div>
@@ -57,18 +57,18 @@ defined('BASEPATH') OR exit('');
 
 
 <!--- Modal to add new staff --->
-<div class='modal fade' id='addNewStaffModal' role="dialog" data-backdrop="static">
+<div class='modal fade' id='addNewCustomerModal' role="dialog" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class='modal-header'>
                 <button class="close" data-dismiss='modal'>&times;</button>
-                <h4 class="text-center">Add New Staff</h4>
+                <h4 class="text-center">Add New Customer</h4>
                 <div class="text-center">
                     <i id="fMsgIcon"></i><span id="fMsg"></span>
                 </div>
             </div>
             <div class="modal-body">
-                <form id='addNewStaffForm' name='addNewStaffForm' role='form'>
+                <form id='addNewCustomerForm' name='addNewCustomerForm' role='form'>
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
                             <label for='firstName' class="control-label">First Name</label>
@@ -89,7 +89,7 @@ defined('BASEPATH') OR exit('');
                             <input type="email" id='email' class="form-control checkField" placeholder="Email">
                             <span class="help-block errMsg" id="emailErr"></span>
                         </div>
-                        <div class="form-group-sm col-sm-6">
+                        <!-- <div class="form-group-sm col-sm-6">
                             <label for='role' class="control-label">Role</label>
                             <select class="form-control checkField" id='role'>
                                 <option value=''>Role</option>
@@ -97,39 +97,26 @@ defined('BASEPATH') OR exit('');
                                 <option value='Basic'>Basic</option>
                             </select>
                             <span class="help-block errMsg" id="roleErr"></span>
-                        </div>
+                        </div> -->
                     </div>
 
                     <div class="row">
                         <div class="form-group-sm col-sm-6">
-                            <label for='mobile1' class="control-label">Phone Number</label>
-                            <input type="tel" id='mobile1' class="form-control checkField" placeholder="Phone Number">
+                            <label for='mobile' class="control-label">Phone Number</label>
+                            <input type="tel" id='mobile' class="form-control checkField" placeholder="Phone Number">
                             <span class="help-block errMsg" id="mobile1Err"></span>
                         </div>
-                        <div class="form-group-sm col-sm-6">
+                        <!-- <div class="form-group-sm col-sm-6">
                             <label for='mobile2' class="control-label">Other Number</label>
                             <input type="tel" id='mobile2' class="form-control" placeholder="Other Number (optional)">
                             <span class="help-block errMsg" id="mobile2Err"></span>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group-sm col-sm-6">
-                            <label for="passwordOrig" class="control-label">Password:</label>
-                            <input type="password" class="form-control checkField" id="passwordOrig" placeholder="Password">
-                            <span class="help-block errMsg" id="passwordOrigErr"></span>
-                        </div>
-                        <div class="form-group-sm col-sm-6">
-                            <label for="passwordDup" class="control-label">Retype Password:</label>
-                            <input type="password" class="form-control checkField" id="passwordDup" placeholder="Retype Password">
-                            <span class="help-block errMsg" id="passwordDupErr"></span>
-                        </div>
+                        </div> -->
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="reset" form="addNewStaffForm" class="btn btn-warning pull-left">Reset Form</button>
-                <button type='button' id='addStaffSubmit' class="btn btn-primary">Add staff</button>
+                <button type="reset" form="addNewCustomerForm" class="btn btn-warning pull-left">Reset Form</button>
+                <button type='button' id='addCustomerSubmit' class="btn btn-primary">Add customer</button>
                 <button type='button' class="btn btn-danger" data-dismiss='modal'>Close</button>
             </div>
         </div>
@@ -139,7 +126,7 @@ defined('BASEPATH') OR exit('');
 
 
 <!--- Modal for editing staff details --->
-<div class='modal fade' id='editAdminModal' role="dialog" data-backdrop="static">
+<!-- <div class='modal fade' id='editAdminModal' role="dialog" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class='modal-header'>
@@ -205,6 +192,6 @@ defined('BASEPATH') OR exit('');
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!--- end of modal to edit staff details --->
-<script src="<?=base_url()?>public/js/staff.js"></script>
+<script src="<?=base_url()?>public/js/customer.js"></script>

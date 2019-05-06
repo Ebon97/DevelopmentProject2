@@ -73,17 +73,24 @@ defined('BASEPATH') OR exit('');
                             </a>
                         </li>
 
-                        <li class="<?= $pageTitle == 'Items' ? 'active' : '' ?>">
+                        <!-- <li class="<?= $pageTitle == 'Items' ? 'active' : '' ?>">
                             <a href="<?= site_url('items') ?>">
                                 <i class="fa fa-cart-plus"></i>
                                 Inventory Items
                             </a>
                         </li>
-
-                        <li class="<?= $pageTitle == 'Employees' ? 'active' : '' ?>">
-                            <a href="<?= site_url('employees') ?>">
+ -->
+                        <li class="<?= $pageTitle == 'Staffs' ? 'active' : '' ?>">
+                            <a href="<?= site_url('staffs') ?>">
                                 <i class="fa fa-users"></i>
-                                Employees
+                                Staffs
+                            </a>
+                        </li>
+
+                        <li class="<?= $pageTitle == 'Customers' ? 'active' : '' ?>">
+                            <a href="<?= site_url('customers') ?>">
+                                <i class="fa fa-users"></i>
+                                Customers
                             </a>
                         </li>
 
@@ -101,7 +108,7 @@ defined('BASEPATH') OR exit('');
                             </a>
                         </li>- -->
 
-                        <li class="<?= $pageTitle == 'Database' ? 'active' : '' ?>">
+                        <!-- <li class="<?= $pageTitle == 'Database' ? 'active' : '' ?>">
                             <a href="<?= site_url('dbmanagement') ?>">
                                 <i class="fa fa-database"></i>
                                 Database Management
@@ -113,7 +120,7 @@ defined('BASEPATH') OR exit('');
                                 <i class="fa fa-user"></i>
                                 Admin Management
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -161,17 +168,24 @@ defined('BASEPATH') OR exit('');
                             </a>
                         </li>
 
-                        <li class="<?= $pageTitle == 'Items' ? 'active' : '' ?>">
+                        <!-- <li class="<?= $pageTitle == 'Items' ? 'active' : '' ?>">
                             <a href="<?= site_url('items') ?>">
                                 <i class="fa fa-shopping-cart"></i>
                                 Inventory Items
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="<?= $pageTitle == 'Staffs' ? 'active' : '' ?>">
                             <a href="<?= site_url('staffs') ?>">
                                 <i class="fa fa-users"></i>
                                 Staffs
+                            </a>
+                        </li>
+
+                        <li class="<?= $pageTitle == 'Customers' ? 'active' : '' ?>">
+                            <a href="<?= site_url('customers') ?>">
+                                <i class="fa fa-users"></i>
+                                Customers
                             </a>
                         </li>
                         <!--
@@ -188,19 +202,19 @@ defined('BASEPATH') OR exit('');
                             </a>
                         </li>--->
 
-                        <li class="<?= $pageTitle == 'Database' ? 'active' : '' ?>">
+                        <!-- <li class="<?= $pageTitle == 'Database' ? 'active' : '' ?>">
                             <a href="<?= site_url('dbmanagement') ?>">
                                 <i class="fa fa-database"></i>
                                 Database Management
                             </a>
-                        </li>
+                        </li> -->
 
-                        <li class="<?= $pageTitle == 'Administrators' ? 'active' : '' ?>">
+                        <!-- <li class="<?= $pageTitle == 'Administrators' ? 'active' : '' ?>">
                             <a href="<?= site_url('administrators') ?>">
                                 <i class="fa fa-user"></i>
                                 Admin Management
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
                     <br>
                 </div>
@@ -208,9 +222,9 @@ defined('BASEPATH') OR exit('');
                 <br>
 
                 <!-- Main content -->
-                <!-- <div class="col-sm-10">
+                <div class="col-sm-10">
                     <?= isset($pageContent) ? $pageContent : "" ?>
-                </div> -->
+                </div>
                 <!-- Main content ends -->
             </div>
         </div>

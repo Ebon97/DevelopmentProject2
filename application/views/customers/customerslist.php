@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('');
 
 <?php echo isset($range) && !empty($range) ? "Showing ".$range : ""?>
 <div class="panel panel-primary">
-    <div class="panel-heading">ADMINISTRATOR ACCOUNTS</div>
-    <?php if($allAdministrators):?>
+    <div class="panel-heading">CUSTOMERS</div>
+    <?php if($allCustomers):?>
     <div class="table table-responsive">
         <table class="table table-striped table-bordered">
             <thead>
@@ -14,28 +14,20 @@ defined('BASEPATH') OR exit('');
                     <th>NAME</th>
                     <th>E-MAIL</th>
                     <th>MOBILE</th>
-                    <th>WORK</th>
-                    <th>ROLE</th>
                     <th>DATE CREATED</th>
-                    <th>LAST LOG IN</th>
-                    <th>EDIT</th>
-                    <th>ACCOUNT STATUS</th>
-                    <th>DELETE</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($allAdministrators as $get):?>
+                <?php foreach($allCustomers as $get):?>
                     <tr>
                         <th><?=$sn?>.</th>
-                        <td class="adminName"><?=$get->first_name ." ". $get->last_name?></td>
+                        <td class="customerName"><?=$get->first_name ." ". $get->last_name?></td>
                         <td class="hidden firstName"><?=$get->first_name?></td>
                         <td class="hidden lastName"><?=$get->last_name?></td>
-                        <td class="adminEmail"><?=mailto($get->email)?></td>
-                        <td class="adminMobile1"><?=$get->mobile1?></td>
-                        <td class="adminMobile2"><?=$get->mobile2?></td>
-                        <td class="adminRole"><?=ucfirst($get->role)?></td>
+                        <td class="customerEmail"><?=mailto($get->email)?></td>
+                        <td class="customerMobile"><?=$get->mobile?></td>
                         <td><?=date('jS M, Y h:i:sa', strtotime($get->created_on))?></td>
-                        <td>
+                        <!-- <td>
                             <?=$get->last_login === "0000-00-00 00:00:00" ? "---" : date('jS M, Y h:i:sa', strtotime($get->last_login))?>
                         </td>
                         <td class="text-center editAdmin" id="edit-<?=$get->id?>">
@@ -54,7 +46,7 @@ defined('BASEPATH') OR exit('');
                             <?php else: ?>
                             <i class="fa fa-trash pointer"></i>
                             <?php endif; ?>
-                        </td>
+                        </td> -->
                     </tr>
                     <?php $sn++;?>
                 <?php endforeach;?>
@@ -62,7 +54,7 @@ defined('BASEPATH') OR exit('');
         </table>
     </div>
     <?php else:?>
-    No Administrative Accounts
+    No Customers
     <?php endif; ?>
 </div>
 <!-- Pagination -->

@@ -47,7 +47,7 @@ class Staffs extends CI_Controller{
         $orderFormat = $this->input->get('orderFormat', TRUE) ? $this->input->get('orderFormat', TRUE) : "ASC";
 
         //count the total staffs in db (excluding the currently logged in staff)
-        $totalstaff = count($this->staffs->getAll());
+        $totalStaffs = count($this->staffs->getAll());
 
         $this->load->library('pagination');
 

@@ -31,13 +31,12 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `appointments`;
 CREATE TABLE IF NOT EXISTS `appointments` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `date_created` timestamp NULL DEFAULT NULL,
   `customers_id` int(11) NOT NULL,
   `customer_name` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
   `customer_contact` varchar(25) COLLATE utf8mb4_bin DEFAULT NULL,
   `staffs_id` int(11) DEFAULT NULL,
   `services_booked` int(11) NOT NULL,
-  `created_at` datetime DEFAULT NULL,
+  `created_at` datetime NOT NULL,
   `start_time` timestamp NULL DEFAULT NULL,
   `end_time_expected` timestamp NULL DEFAULT NULL,
   `end_time` timestamp NULL DEFAULT NULL,

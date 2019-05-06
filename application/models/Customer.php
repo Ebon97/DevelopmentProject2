@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('');
 
-class Customers extends CI_Model{
+class Customer extends CI_Model{
     public function __construct(){
         parent::__construct();
     }
@@ -94,7 +94,7 @@ class Customers extends CI_Model{
      * @return [type]               [description]
      */
     public function getAll($orderBy = "first_name", $orderFormat = "ASC", $start = 0, $limit = ""){
-        $this->db->select('id, first_name, last_name, mobile, email, joined_since, rec_by');\
+        $this->db->select('id, first_name, last_name, mobile, email, joined_since, rec_by');
         $this->db->limit($limit, $start);
         $this->db->order_by($orderBy, $orderFormat);
 
