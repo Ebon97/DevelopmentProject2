@@ -43,13 +43,15 @@ $dataPoints = array(
     <style>
         #piechart,
         #columnchart,
+#columnchart1,
         #weeklysales {
-
+		
             width: 100%;
-            height: 100%
+            height: 100%;
         }
 
         #piechart {
+	padding-top: 300px;
             padding-bottom: 600px;
         }
 
@@ -154,28 +156,37 @@ $dataPoints = array(
         </a>
 
     </div>
-    <div id="weeklysales">
+   
+
+    </div>
+<div id="columnchart1" style="height: 300px; width: 100%;">
+
+   
+<script src="columnchart1.js"></script>
+
+ </div>
+
+
+
+    <div id="columnchart" style="height: 300px; width: 100%;">
+
+    <script src="columnchart.js"></script>
+    </div>
+
+ <div id="weeklysales">
 
         <script src="weeklysales.js">
 
 
         </script>
-
-    </div>
-
-
-
-    <div id="piechart" style="height: 300px; width: 100%;">
-
-    </div>
-
-    <div id="columnchart" style="height: 300px; width: 100%;">
-
-    </div>
+</div>
     <div id="hourly" style="height: 300px; width: 100%;"></div>
-    <script src="piechart.js"></script>
-    <script src="columnchart.js"></script>
+	
+    
     <script src="hourly.js"></script>
+    <div id="piechart" style="height: 300px; width: 100%;">
+<script src="piechart.js"></script>
+    </div>
 
 </body>
 

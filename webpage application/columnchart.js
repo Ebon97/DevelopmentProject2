@@ -4,7 +4,7 @@ var chart = new CanvasJS.Chart("columnchart", {
 	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text: "Employee Sales of the Month to Date"
+		text: "Employee Sales"
 	},
 	axisY: {
 		title: "Sales ($)"
