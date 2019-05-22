@@ -5,15 +5,14 @@ header('Content-Type: application/json');
 define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'salon');
+define('DB_NAME', 'score');
 //get connection
 $mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 if(!$mysqli){
 	die("Connection failed: " . $mysqli->error);
 }
 //query to get data from the table
-$query = sprintf("SELECT s.staff_name as staff, sum(b.price) as sales from staff s inner join booking b on s.staff_id = b.booking_staff GROUP BY s.staff_id ORDER BY s.staff_id");
-//$query = sprintf("SELECT playerid, score FROM score ORDER BY playerid");
+$query = sprintf("SELECT playerid, score FROM score ORDER BY playerid");
 //execute query
 $result = $mysqli->query($query);
 //loop through the returned data

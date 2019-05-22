@@ -10,8 +10,7 @@
 
 <script type="text/javascript" src="jquery.min.js"></script>
 		<script type="text/javascript" src="Chart.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="jsweekly/app2.js"></script>
+		<script type="text/javascript" src="app2.js"></script>
     
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -146,15 +145,15 @@
         </a>
 
     </div>
-   <div id="employees">
+   <div id="employee">
 			<canvas id="employeesales"></canvas>
 		</div>
 <p>
-    </p>
+    dfdf</p>
    
-   <div id="weeklysales">
-       <canvas id = "columnchart1"></canvas>
-       
+   <div id="weekly">
+       dfdf
+			<canvas id="weekly"></canvas>
 		
 		</div>
 

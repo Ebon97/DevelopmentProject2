@@ -12,7 +12,9 @@ if(!$mysqli){
 	die("Connection failed: " . $mysqli->error);
 }
 //query to get data from the table
-$query = sprintf("SELECT s.staff_name as staff, sum(b.price) as sales from staff s inner join booking b on s.staff_id = b.booking_staff GROUP BY s.staff_id ORDER BY s.staff_id");
+//$query = sprintf("SELECT s.staff_name as staff, sum(b.price) as sales from staff s inner join booking b on s.staff_id = b.booking_staff GROUP BY s.staff_id ORDER BY s.staff_id");
+$query = sprintf("SELECT DAYNAME(booking_date) as day, sum(b.price) as sales from booking b GROUP BY DAYNAME(booking_date) ORDER BY WEEKDAY(booking_date)");
+
 //$query = sprintf("SELECT playerid, score FROM score ORDER BY playerid");
 //execute query
 $result = $mysqli->query($query);

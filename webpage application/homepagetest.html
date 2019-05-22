@@ -11,8 +11,6 @@
 <script type="text/javascript" src="jquery.min.js"></script>
 		<script type="text/javascript" src="Chart.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="jsweekly/app2.js"></script>
-    
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -20,15 +18,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="testing.css">
     <style>
-        #employee{
-            width:auto;
-            height:auto;
-            padding-bottom:500px;
-        }
-        #weekly{
-            width:auto;
-            height:auto;
-            padding-top:400px;
+        #chart-container{
+            width: 640px;
+            height: auto;
         }
         #piechart,
         #employeechart,
@@ -146,17 +138,14 @@
         </a>
 
     </div>
-   <div id="employees">
-			<canvas id="employeesales"></canvas>
-		</div>
-<p>
-    </p>
    
-   <div id="weeklysales">
-       <canvas id = "columnchart1"></canvas>
-       
-		
+<div id="chart-container">
+			<canvas id="employeechart"></canvas>
 		</div>
+<div id="employeechart" style="height: 300px; width: 100%;">
+    <canvas id = "employeechart"></canvas>
+    <script src="app.js"></script>
+    </div>
 
 	
 

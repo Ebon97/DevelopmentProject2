@@ -1,6 +1,6 @@
 
 
-var chart = new CanvasJS.Chart("columnchart", {
+var chart = new CanvasJS.Chart("employeechart", {
 	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{

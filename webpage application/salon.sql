@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2019 at 06:37 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.10
+-- Generation Time: May 23, 2019 at 01:07 AM
+-- Server version: 10.1.40-MariaDB
+-- PHP Version: 7.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `appointment`
+-- Database: `salon`
 --
 
 -- --------------------------------------------------------
@@ -34,15 +34,23 @@ CREATE TABLE `booking` (
   `booking_time` time NOT NULL,
   `booking_cust` int(20) NOT NULL,
   `booking_staff` int(20) NOT NULL,
-  `booking_status` varchar(50) NOT NULL
+  `booking_status` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`booking_id`, `booking_date`, `booking_time`, `booking_cust`, `booking_staff`, `booking_status`) VALUES
-(121, '2019-04-10', '12:30:00', 1, 12345, 'Booked');
+INSERT INTO `booking` (`booking_id`, `booking_date`, `booking_time`, `booking_cust`, `booking_staff`, `booking_status`, `price`) VALUES
+(121, '2019-04-10', '12:30:00', 1, 1023, 'Booked', 250),
+(122, '2019-04-11', '12:30:00', 2, 1024, 'Booked', 150),
+(123, '2019-04-12', '12:30:00', 3, 1025, 'Booked', 450),
+(124, '2019-04-13', '12:30:00', 4, 1026, 'Booked', 350),
+(125, '2019-04-14', '12:30:00', 5, 1027, 'Booked', 450),
+(126, '2019-04-15', '12:30:00', 6, 1028, 'Booked', 250),
+(127, '2019-04-16', '12:30:00', 7, 1029, 'Booked', 50),
+(128, '2019-04-17', '12:30:00', 1, 1023, 'Booked', 50);
 
 -- --------------------------------------------------------
 
@@ -61,7 +69,13 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`cust_id`, `cust_name`, `cust_gender`) VALUES
-(1, 'Yvonne', 'Female');
+(1, 'Anna', 'Female'),
+(2, 'B', 'female'),
+(3, 'C', 'male'),
+(4, 'D', 'female'),
+(5, 'E', 'male'),
+(6, 'F', 'female'),
+(7, 'G', 'female');
 
 -- --------------------------------------------------------
 
@@ -100,7 +114,13 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staff_id`, `staff_name`, `staff_gender`, `staff_password`) VALUES
-(12345, 'Chad', 'male', 'chad123');
+(1023, 'Raymond', 'male', 'raymond123'),
+(1024, 'Chad', 'male', 'chad123'),
+(1025, 'Yvonne', 'Female', 'yvonne123'),
+(1026, 'Dastan', 'Male', 'dastan123'),
+(1027, 'James', 'male', 'james123'),
+(1028, 'Mary', 'female', 'mary123'),
+(1029, 'Jerry', 'male', 'jerry123');
 
 --
 -- Indexes for dumped tables
